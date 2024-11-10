@@ -7,6 +7,10 @@ let level = 0;
 let highScore = 0; // Variable to track the highest score
 let h2 = document.querySelector("h2");
 
+// Sound files for level up and game over
+let levelUpSound = new Audio('./levelUp.mp3'); // Path to your level up sound file
+let gameOverSound = new Audio('./gameOver.wav'); // Path to your game over sound file
+
 document.addEventListener("keypress", function () {
     if (!started) {
         console.log("Game has started");
@@ -35,6 +39,9 @@ function levelUp() {
     level++;
     h2.innerHTML = `Level ${level}`;
     
+    // Play level-up sound
+    levelUpSound.play();
+    
     // Randomly choose a button
     let randIdx = Math.floor(Math.random() * 4); // Should be * 4, not * 3
     let randColor = btns[randIdx];
@@ -54,6 +61,9 @@ function checkAns(idx) {
         if (level > highScore) {
             highScore = level;
         }
+
+        // Play game-over sound
+        gameOverSound.play();
 
         h2.innerHTML = `Game Over! Your score was <b>${level}</b><br> Highest score: <b>${highScore}</b><br> Press any key to start.`;
         document.querySelector("body").style.backgroundColor = "red";
