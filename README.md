@@ -25,7 +25,7 @@ Welcome to an interactive twist on the classic **Simon Game**! Test your memory 
 
 - **HTML** – Structure for all game elements
 - **CSS** – Styling for a vibrant and colorful experience
-- **JavaScript** – Core game logic, handling player inputs, and controlling sequences
+- **JavaScript** – Core game logic, Dom manipulation , and controlling sequences
 
-## Preview
+
 
